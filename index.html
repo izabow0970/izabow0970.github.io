@@ -1,57 +1,78 @@
 <!doctype html>
-<nav aria-label="Primary">
-<ul class="nav">
-<li><a href="index.html" data-nav="home">Home</a></li>
-<li><a href="projects.html" data-nav="projects">Projects</a></li>
-<li><a href="about.html" data-nav="about">About</a></li>
-<li><a href="contact.html" data-nav="contact">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Photography by Izaiah Bowers — portraits, events, lifestyle." />
+  <meta name="author" content="Izaiah Bowers" />
+  <title>Izaiah Bowers — Photography</title>
 
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css?v=1" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-<main id="main">
-<!-- HERO with your chosen image (AuntieJ-28) -->
-<section class="hero has-image">
-<figure class="bg" role="img" aria-label="Richmond skyline over the James River at golden hour">
-<img src="images/auntiej-28.jpg" alt="Richmond skyline over the James River at golden hour" />
-</figure>
-<div class="container">
-<h1>Welcome to my photography portfolio</h1>
-<p class="lede">Portraits, events, and lifestyle work — capturing real moments with clean, natural light.</p>
-<p>
-<a class="btn" href="projects.html">View Projects</a>
-<a class="btn ghost" href="contact.html">Book a Session</a>
-</p>
-</div>
-</section>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container row">
+      <a class="brand" href="index.html">📷 Izaiah Bowers</a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="index.html" data-nav="home">Home</a></li>
+          <li><a href="projects.html" data-nav="projects">Projects</a></li>
+          <li><a href="about.html" data-nav="about">About</a></li>
+          <li><a href="contact.html" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Main -->
+  <main id="main">
+    <!-- Hero with your chosen image (AuntieJ-28) -->
+    <section class="hero has-image">
+      <figure class="bg" role="img" aria-label="Richmond skyline over the James River at golden hour">
+        <img src="images/auntiej-28.jpg" alt="Richmond skyline over the James River at golden hour" />
+      </figure>
+      <div class="container">
+        <h1>Welcome to my photography portfolio</h1>
+        <p class="lede">Portraits, events, and lifestyle work — capturing real moments with clean, natural light.</p>
+        <p>
+          <a class="btn" href="projects.html">View Projects</a>
+          <a class="btn ghost" href="contact.html">Book a Session</a>
+        </p>
+      </div>
+    </section>
 
-<section class="home-sections container grid-3">
-<article>
-<h2>Portraits</h2>
-<p>Studio and environmental portraits that feel natural and timeless.</p>
-<p><a class="inline" href="projects.html#portraits">See portraits →</a></p>
-</article>
-<article>
-<h2>Events</h2>
-<p>Documentary coverage of weddings, concerts, and community gatherings.</p>
-<p><a class="inline" href="projects.html#events">See events →</a></p>
-</article>
-<article>
-<h2>Lifestyle</h2>
-<p>Everyday stories — families, couples, and small businesses, on location.</p>
-<p><a class="inline" href="projects.html#lifestyle">See lifestyle →</a></p>
-</article>
-</section>
-</main>
+    <!-- Featured categories -->
+    <section class="home-sections container grid-3">
+      <article>
+        <h2>Portraits</h2>
+        <p>Studio and environmental portraits that feel natural and timeless.</p>
+        <p><a class="inline" href="projects.html">See portraits →</a></p>
+      </article>
+      <article>
+        <h2>Events</h2>
+        <p>Documentary coverage of weddings, concerts, and community gatherings.</p>
+        <p><a class="inline" href="projects.html">See events →</a></p>
+      </article>
+      <article>
+        <h2>Lifestyle</h2>
+        <p>Everyday stories — families, couples, and small businesses, on location.</p>
+        <p><a class="inline" href="projects.html">See lifestyle →</a></p>
+      </article>
+    </section>
+  </main>
 
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Izaiah Bowers &middot; All rights reserved.</p>
+    </div>
+  </footer>
 
-<footer class="site-footer">
-<div class="container">
-<p>&copy; <span id="year"></span> Izaiah Bowers &middot; All rights reserved.</p>
-</div>
-</footer>
+  <!-- Tiny helper JS (nav highlight + current year) -->
+  <script defer src="js/main.js"></script>
 </body>
 </html>
