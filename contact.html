@@ -1,51 +1,91 @@
 <!doctype html>
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-<div class="container row">
-<a class="brand" href="index.html">📷 Izaiah Bowers</a>
-<nav aria-label="Primary">
-<ul class="nav">
-<li><a href="index.html" data-nav="home">Home</a></li>
-<li><a href="projects.html" data-nav="projects">Projects</a></li>
-<li><a href="about.html" data-nav="about">About</a></li>
-<li><a href="contact.html" data-nav="contact">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Contact photographer Izaiah Bowers for bookings and inquiries." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Izaiah Bowers</title>
 
+  <link rel="stylesheet" href="css/style.css?v=8" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-<main id="main" class="container narrow">
-<h1>Contact</h1>
-<p>For bookings and inquiries, reach out anytime.</p>
-<ul class="contact-list">
-<li><strong>Email:</strong> <a href="mailto:izaiah@example.com">izaiah@example.com</a></li>
-<li><strong>Instagram:</strong> <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">@yourhandle</a></li>
-</ul>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container row">
+      <a class="brand" href="index.html">📷 Izaiah Bowers</a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="index.html" data-nav="home">Home</a></li>
+          <li><a href="projects.html" data-nav="projects">Projects</a></li>
+          <li><a href="about.html" data-nav="about">About</a></li>
+          <li><a href="contact.html" data-nav="contact" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Main -->
+  <main id="main" class="container narrow">
+    <header style="padding: 1.25rem 0 0.5rem">
+      <h1 style="margin:0">Contact</h1>
+      <p class="lede" id="contact-note">For bookings, collaborations, or questions—reach out anytime.</p>
+    </header>
 
-<form class="contact-form" action="mailto:izaiah@example.com" method="post" enctype="text/plain">
-<label>
-Name
-<input type="text" name="name" required />
-</label>
-<label>
-Email
-<input type="email" name="email" required />
-</label>
-<label>
-Message
-<textarea name="message" rows="5" required></textarea>
-</label>
-<button class="btn" type="submit">Send</button>
-</form>
-</main>
+    <!-- Direct contact -->
+    <ul class="contact-list" aria-label="Direct contact methods">
+      <!-- TODO: replace the email with your real address -->
+      <li><strong>Email:</strong> <a href="mailto:izaiah.bowers99@gmail.com">izaiah.bowers99@gmail.com</a></li>
+      <!-- TODO: replace with your real handle -->
+      <li><strong>Instagram:</strong> <a href="https://instagram.com/izaiah.bowers" target="_blank" rel="noopener">@yizaiah.bowers</a></li>
+    </ul>
 
+    <!-- Mailto form (opens visitor's email app) -->
+    <form class="contact-form"
+          action="mailto:izaiah.bowers99@gmail.com"
+          method="post"
+          enctype="text/plain"
+          aria-describedby="contact-note">
+      <label>
+        Name
+        <input type="text" name="name" autocomplete="name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+      <label>
+        Subject
+        <input type="text" name="subject" placeholder="Booking / Collaboration / Question" required />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="6" placeholder="Tell me about your shoot, date, location, and any references." required></textarea>
+      </label>
 
-<footer class="site-footer">
-<div class="container">
-<p>&copy; <span id="year"></span> Izaiah Bowers &hearts; Thanks for visiting.</p>
-</div>
-</footer>
+      <!-- Honeypot (anti-bot). Humans leave this blank -->
+      <label style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+        Leave this field empty
+        <input type="text" name="website" tabindex="-1" autocomplete="off" />
+      </label>
+
+      <button class="btn" type="submit">Send</button>
+      <p class="lede" style="margin:.5rem 0 0;">
+        Tip: this opens your email app with the details pre-filled.
+      </p>
+    </form>
+
+    <!-- Optional: If you later switch to a form service (e.g., Formspree),
+         replace the 'action' with their endpoint and remove enctype="text/plain". -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Izaiah Bowers &hearts; Thanks for visiting.</p>
+    </div>
+  </footer>
 </body>
 </html>
