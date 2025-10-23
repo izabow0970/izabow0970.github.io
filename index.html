@@ -1,68 +1,57 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <!-- Required metadata -->
-  <meta charset="utf-8" />
-  <meta name="description" content="The photography portfolio of Izaiah Bowers: portraits, events, and lifestyle work." />
-  <meta name="keywords" content="photography, portfolio, portraits, events, lifestyle, Izaiah Bowers" />
-  <meta name="author" content="Izaiah Bowers" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Izaiah Bowers — Photography Portfolio</title>
-</head>
-<body>
-  <!-- Header with welcome message -->
-  <header>
-    <h1>Welcome to my photography portfolio</h1>
-  </header>
+<nav aria-label="Primary">
+<ul class="nav">
+<li><a href="index.html" data-nav="home">Home</a></li>
+<li><a href="projects.html" data-nav="projects">Projects</a></li>
+<li><a href="about.html" data-nav="about">About</a></li>
+<li><a href="contact.html" data-nav="contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-  <!-- Navigation: bulleted list with internal links -->
-  <nav aria-label="Primary">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
-  <!-- Main content -->
-  <main>
-    <!-- About section -->
-    <section id="about">
-      <header>
-        <h2>About</h2>
-      </header>
-      <p>
-        I’m Izaiah, a photographer who focuses on portraits.
-        I love capturing real moments and clean, natural light.
-      </p>
-    </section>
+<main id="main">
+<!-- HERO with your chosen image (AuntieJ-28) -->
+<section class="hero has-image">
+<figure class="bg" role="img" aria-label="Richmond skyline over the James River at golden hour">
+<img src="images/auntiej-28.jpg" alt="Richmond skyline over the James River at golden hour" />
+</figure>
+<div class="container">
+<h1>Welcome to my photography portfolio</h1>
+<p class="lede">Portraits, events, and lifestyle work — capturing real moments with clean, natural light.</p>
+<p>
+<a class="btn" href="projects.html">View Projects</a>
+<a class="btn ghost" href="contact.html">Book a Session</a>
+</p>
+</div>
+</section>
 
-    <!-- Projects section -->
-    <section id="projects">
-      <header>
-        <h2>Projects</h2>
-      </header>
-      <p>
-        Here you’ll find highlights from recent shoots and personal projects. I’ll be adding
-        galleries to this page soon.
-      </p>
-    </section>
 
-    <!-- Contact section -->
-    <section id="contact">
-      <header>
-        <h2>Contact</h2>
-      </header>
-      <p>
-        For bookings and inquiries, email me at
-        <a href="mailto:izaiah.bowers99@gmail.com">izaiah@example.com</a>.
-      </p>
-    </section>
-  </main>
+<section class="home-sections container grid-3">
+<article>
+<h2>Portraits</h2>
+<p>Studio and environmental portraits that feel natural and timeless.</p>
+<p><a class="inline" href="projects.html#portraits">See portraits →</a></p>
+</article>
+<article>
+<h2>Events</h2>
+<p>Documentary coverage of weddings, concerts, and community gatherings.</p>
+<p><a class="inline" href="projects.html#events">See events →</a></p>
+</article>
+<article>
+<h2>Lifestyle</h2>
+<p>Everyday stories — families, couples, and small businesses, on location.</p>
+<p><a class="inline" href="projects.html#lifestyle">See lifestyle →</a></p>
+</article>
+</section>
+</main>
 
-  <!-- Footer with an HTML character entity -->
-  <footer>
-    <p>&copy; 2025 Izaiah Bowers &mdash; All rights reserved.</p>
-  </footer>
+
+<footer class="site-footer">
+<div class="container">
+<p>&copy; <span id="year"></span> Izaiah Bowers &middot; All rights reserved.</p>
+</div>
+</footer>
 </body>
 </html>
