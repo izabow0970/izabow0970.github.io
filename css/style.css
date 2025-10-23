@@ -35,6 +35,7 @@ body {
 }
 img { max-width: 100%; display: block; }
 a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 .container { width: min(var(--container-max), 92vw); margin: 0 auto; }
 .narrow { width: min(800px, 92vw); }
@@ -67,8 +68,9 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 .nav a {
   display: block; color: var(--text);
   padding: .6rem .8rem; border-radius: .6rem;
+  text-decoration: none;
 }
-.nav a[aria-current="page"], .nav a:hover { background: rgba(255,255,255,.08); }
+.nav a[aria-current="page"], .nav a:hover { background: rgba(255,255,255,.08); text-decoration: none; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -166,50 +168,57 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   outline-offset: 2px;
 }
 
-/* ---------- Projects (2×2 grid) ---------- */
-.projects-2x2 { padding: 0 0 1rem; }
-.projects-2x2 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+/* =========================================================
+   Projects — show whole images (no cropping)
+   - 2×2 grid by default
+   - switches to 1×4 wide row on large screens
+   ========================================================= */
+.projects-fit { padding: 0 0 1rem; }
 
-  /* Attempt to fit the 2×2 on a single screen on typical laptops */
-  height: calc(100vh - var(--header-h) - var(--footer-h) - var(--page-padding));
-  min-height: 420px;
+.projects-fit .grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);   /* 2×2 by default */
 }
 
-.tile {
-  position: relative;
+.projects-fit .tile {
   background: var(--card);
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 1rem;
   overflow: hidden;
-  isolation: isolate;
-  display: grid;
-}
-.tile img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center;
-  filter: saturate(.95) contrast(1.05) brightness(.95);
-  transform: scale(1.001);
-  transition: transform .6s ease;
-}
-.tile::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 60%);
-  z-index: 0;
-}
-.tile figcaption {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  padding: .6rem .8rem; color: #fff; font-weight: 600; z-index: 1;
-}
-.tile:hover img { transform: scale(1.03); }
 
-/* On very small screens or short viewports, allow normal scrolling */
+  /* center the image and preserve full image (contain) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* give tiles a consistent shape on normal screens */
+  aspect-ratio: 4 / 3;
+}
+
+.projects-fit .tile img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;          /* <-- key: show entire image */
+  transform: none;
+  filter: none;                 /* keep originals clean here */
+}
+
+/* Large screens: go wide (1 row × 4 columns) and try to fit without scrolling */
+@media (min-width: 1200px) {
+  .projects-fit .grid {
+    grid-template-columns: repeat(4, 1fr);       /* 1×4 */
+    height: calc(100vh - var(--header-h) - var(--footer-h) - var(--page-padding));
+    align-items: stretch;
+  }
+  .projects-fit .tile { aspect-ratio: auto; }    /* let row height drive tile height */
+}
+
+/* Very small/short viewports: allow natural height (scroll if needed) */
 @media (max-width: 900px), (max-height: 700px) {
-  .projects-2x2 .grid { height: auto; }
-  .tile img { aspect-ratio: 4 / 3; } /* keeps tiles nicely sized if height grows */
+  .projects-fit .grid { height: auto; }
 }
 
 /* ---------- Small screens polish ---------- */
