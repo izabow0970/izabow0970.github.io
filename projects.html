@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="css/style.css?v=3" />
   <script defer src="js/main.js"></script>
 </head>
-<!-- Disable vertical scrolling on this page so all four images are visible -->
-<body class="projects-page">
+<body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -28,42 +27,30 @@
   </header>
 
   <main id="main">
-    <!-- Minimal header to save vertical space -->
-    <div class="container" style="padding: 0.75rem 0 0.25rem;">
+    <div class="container" style="padding: 0.75rem 0 0.5rem;">
       <h1 style="margin:0; font-size:clamp(1.25rem,2vw,1.5rem); color:var(--muted); font-weight:600; letter-spacing:.02em;">
         Projects
       </h1>
     </div>
 
-    <!-- One row, four tiles, fills the remaining viewport height -->
-    <section class="projects-quad">
+    <!-- 2x2 grid -->
+    <section class="projects-2x2">
       <div class="container">
-        <div class="gallery-row" role="list">
-          <!-- 1 -->
-          <figure class="tile" role="listitem">
-            <img src="images/iandk.jpg"
-                 alt="Autumn collage couple portrait on textured orange background" />
+        <div class="grid">
+          <figure class="tile">
+            <img src="images/iandk.jpg" alt="Autumn collage couple portrait on textured orange background" />
             <figcaption>Autumn Collage</figcaption>
           </figure>
-
-          <!-- 2 -->
-          <figure class="tile" role="listitem">
-            <img src="images/tdob.jpg"
-                 alt="Editorial studio portrait with mask and layered denim on orange backdrop" />
+          <figure class="tile">
+            <img src="images/tdob.jpg" alt="Editorial studio portrait with mask and layered denim on orange backdrop" />
             <figcaption>Masquerade</figcaption>
           </figure>
-
-          <!-- 3 -->
-          <figure class="tile" role="listitem">
-            <img src="images/tdwb.png"
-                 alt="Conceptual portrait in clouds with flowing white scarf" />
+          <figure class="tile">
+            <img src="images/tdwb.png" alt="Conceptual portrait in clouds with flowing white scarf" />
             <figcaption>Cloud Walker</figcaption>
           </figure>
-
-          <!-- 4 -->
-          <figure class="tile" role="listitem">
-            <img src="images/y2k.jpg"
-                 alt="Studio portrait with glasses and lollipop on blue backdrop" />
+          <figure class="tile">
+            <img src="images/y2k.jpg" alt="Studio portrait with glasses and lollipop on blue backdrop" />
             <figcaption>Retro Pop</figcaption>
           </figure>
         </div>
