@@ -130,6 +130,25 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 .hero-content.hero-center { text-align: center; }
 .hero-content.hero-center p { display: flex; gap: .75rem; justify-content: center; }
 
+/* ---------- Home: three horizontal containers ---------- */
+.home-intro { padding: 2rem 0 2rem; }
+.triptych {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.section-card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+/* Small screens: stack */
+@media (max-width: 720px) {
+  .triptych { grid-template-columns: 1fr; }
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   padding: 2rem 0;
