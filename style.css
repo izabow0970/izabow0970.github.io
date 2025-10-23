@@ -1,1 +1,57 @@
+/* css/style.css */
+:root{
+--bg:#0f172a; /* slate-900 */
+--text:#e5e7eb; /* slate-200 */
+--muted:#94a3b8; /* slate-400 */
+--card:#111827; /* gray-900 */
+--brand:#3682A2; /* brand 1 */
+--brand-2:#393F5C; /* brand 2 */
+--ring:rgba(56,130,162,.45);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--brand)}
+.container{width:min(1100px,92vw);margin:0 auto}
+.narrow{width:min(800px,92vw)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 
+
+/* Header / Nav */
+.site-header{position:sticky;top:0;z-index:40;background:color-mix(in oklab,var(--bg) 85%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid color-mix(in oklab,var(--text) 14%, transparent)}
+.brand{font-weight:700;color:var(--text);text-decoration:none}
+.nav{list-style:none;margin:0;padding:0;display:flex;gap:.8rem}
+.nav a{display:block;padding:.6rem .8rem;border-radius:.6rem;color:var(--text);text-decoration:none}
+.nav a[aria-current="page"], .nav a:hover{background:color-mix(in oklab,var(--brand) 22%, var(--card))}
+
+
+/* Utilities */
+.skip{position:absolute;left:-9999px;top:auto}
+.skip:focus{left:1rem;top:1rem;background:var(--card);color:var(--text);padding:.5rem .8rem;border-radius:.5rem}
+.btn{display:inline-block;background:var(--brand);color:#fff;border:0;padding:.7rem 1rem;border-radius:.7rem;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.btn.ghost{background:transparent;border:1px solid color-mix(in oklab,var(--text) 20%, transparent);color:var(--text)}
+.inline{white-space:nowrap}
+.lede{color:var(--muted);font-size:1.1rem}
+.grid-3{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+
+
+/* Hero */
+.hero{padding:4rem 0;background:linear-gradient(135deg, color-mix(in oklab,var(--brand) 18%, transparent), transparent 40%)}
+.hero h1{font-size:clamp(1.6rem,2vw+1.2rem,2.4rem);margin:0 0 .5rem}
+/* Hero with background image */
+.hero.has-image{position:relative;padding: min(28vh, 14rem) 0;}
+.hero.has-image .bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.hero.has-image .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.25))}
+.hero.has-image img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+
+/* Footer */
+.site-footer{padding:2rem 0;border-top:1px solid color-mix(in oklab,var(--text) 14%, transparent);color:var(--muted)}
+
+
+/* About / Contact */
+.contact-list{list-style:none;padding:0;margin:0 0 1rem 0}
+.contact-list li{margin:.4rem 0}
+.contact-form{display:grid;gap:.8rem}
+@media (max-width:700px){.lb-nav.prev{left:.5rem}.lb-nav.next{right:.5rem}}
