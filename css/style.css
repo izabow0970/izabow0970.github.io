@@ -14,7 +14,7 @@
 
   --container-max: 1100px;
 
-  /* layout helpers for viewport-fitting sections */
+  /* layout helpers (used by some sections) */
   --header-h: 72px;
   --footer-h: 80px;
   --page-padding: 32px;
@@ -169,59 +169,36 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 
 /* =========================================================
-   Projects — show whole images (no cropping)
-   - 2×2 grid by default
-   - switches to 1×4 wide row on large screens
+   Projects — 2×2 grid, show whole images (no cropping),
+   scrolling allowed if needed
    ========================================================= */
-.projects-fit { padding: 0 0 1rem; }
-
-.projects-fit .grid {
+.projects-2x2 { padding: 0 0 1.25rem; }
+.projects-2x2 .grid {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 columns */
   gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);   /* 2×2 by default */
 }
 
-.projects-fit .tile {
+/* Tiles are simple wrappers; images dictate height */
+.tile {
   background: var(--card);
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 1rem;
   overflow: hidden;
-
-  /* center the image and preserve full image (contain) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* give tiles a consistent shape on normal screens */
-  aspect-ratio: 4 / 3;
+  padding: .5rem;            /* tiny inset so contained images don't touch edges */
+  display: block;
 }
 
-.projects-fit .tile img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;          /* <-- key: show entire image */
-  transform: none;
-  filter: none;                 /* keep originals clean here */
+/* Show full image with no cropping */
+.tile img {
+  width: 100%;
+  height: auto;              /* keep aspect ratio */
+  object-fit: contain;       /* safety if a height ever gets applied */
+  display: block;
 }
 
-/* Large screens: go wide (1 row × 4 columns) and try to fit without scrolling */
-@media (min-width: 1200px) {
-  .projects-fit .grid {
-    grid-template-columns: repeat(4, 1fr);       /* 1×4 */
-    height: calc(100vh - var(--header-h) - var(--footer-h) - var(--page-padding));
-    align-items: stretch;
-  }
-  .projects-fit .tile { aspect-ratio: auto; }    /* let row height drive tile height */
-}
-
-/* Very small/short viewports: allow natural height (scroll if needed) */
-@media (max-width: 900px), (max-height: 700px) {
-  .projects-fit .grid { height: auto; }
-}
-
-/* ---------- Small screens polish ---------- */
+/* Small screens: stack if needed (optional) */
 @media (max-width: 540px) {
+  .projects-2x2 .grid { grid-template-columns: 1fr; }
   .btn { width: 100%; text-align: center; }
 }
