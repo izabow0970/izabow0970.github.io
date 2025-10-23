@@ -1,73 +1,84 @@
 <!doctype html>
-<meta charset="utf-8" />
-<meta name="description" content="The photography portfolio of Izaiah Bowers: portraits, events, lifestyle." />
-<meta name="keywords" content="photography, portfolio, portraits, events, lifestyle, Izaiah Bowers" />
-<meta name="author" content="Izaiah Bowers" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Izaiah Bowers — Photography</title>
-<link rel="stylesheet" href="css/style.css" />
-<script defer src="js/main.js"></script>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="The photography portfolio of Izaiah Bowers: portraits, events, lifestyle." />
+  <meta name="keywords" content="photography, portfolio, portraits, events, lifestyle, Izaiah Bowers" />
+  <meta name="author" content="Izaiah Bowers" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Izaiah Bowers — Photography</title>
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css?v=2" />
+
+  <!-- Helper JS (nav highlight + footer year) -->
+  <script defer src="js/main.js"></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-<div class="container row">
-<a class="brand" href="index.html">📷 Izaiah Bowers</a>
-<nav aria-label="Primary">
-<ul class="nav">
-<li><a href="index.html" data-nav="home">Home</a></li>
-<li><a href="projects.html" data-nav="projects">Projects</a></li>
-<li><a href="about.html" data-nav="about">About</a></li>
-<li><a href="contact.html" data-nav="contact">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+  <a class="skip" href="#main">Skip to content</a>
 
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container row">
+      <a class="brand" href="index.html">📷 Izaiah Bowers</a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="index.html" data-nav="home">Home</a></li>
+          <li><a href="projects.html" data-nav="projects">Projects</a></li>
+          <li><a href="about.html" data-nav="about">About</a></li>
+          <li><a href="contact.html" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<main id="main">
-<!-- HERO with your chosen image (AuntieJ-28) -->
-<section class="hero has-image" aria-label="Featured image">
-  <figure class="bg" role="img" aria-label="Richmond skyline over the James River at golden hour">
-    <img src="images/hero-richmond.png?v=2"
-         alt="Richmond skyline over the James River at golden hour" />
-  </figure>
-  <div class="container hero-content">
-    <h1>Cinematic photography.</h1>
-    <p class="lede">Portraits, events, and lifestyle — crafted with light and motion.</p>
-    <p>
-      <a class="btn" href="projects.html">View Projects</a>
-      <a class="btn ghost" href="contact.html">Book a Session</a>
-    </p>
-  </div>
-</section>
+  <!-- Main -->
+  <main id="main">
+    <!-- Full-bleed hero image with overlayed content -->
+    <section class="hero has-image" aria-label="Featured image">
+      <!-- Background image fills the hero -->
+      <figure class="bg" role="img" aria-label="Richmond skyline over the James River at golden hour">
+        <img
+          src="images/hero-richmond.png?v=2"
+          alt="Richmond skyline over the James River at golden hour" />
+      </figure>
 
+      <!-- Overlay content -->
+      <div class="container hero-content">
+        <h1>Cinematic photography.</h1>
+        <p class="lede">Portraits, events, and lifestyle — crafted with light and motion.</p>
+        <p>
+          <a class="btn" href="projects.html">View Projects</a>
+          <a class="btn ghost" href="contact.html">Book a Session</a>
+        </p>
+      </div>
+    </section>
 
+    <!-- Featured categories -->
+    <section class="home-sections container grid-3">
+      <article>
+        <h2>Portraits</h2>
+        <p>Studio and environmental portraits that feel natural and timeless.</p>
+        <p><a class="inline" href="projects.html#portraits">See portraits →</a></p>
+      </article>
+      <article>
+        <h2>Events</h2>
+        <p>Documentary coverage of weddings, concerts, and community gatherings.</p>
+        <p><a class="inline" href="projects.html#events">See events →</a></p>
+      </article>
+      <article>
+        <h2>Lifestyle</h2>
+        <p>Everyday stories — families, couples, and small businesses, on location.</p>
+        <p><a class="inline" href="projects.html#lifestyle">See lifestyle →</a></p>
+      </article>
+    </section>
+  </main>
 
-<section class="home-sections container grid-3">
-<article>
-<h2>Portraits</h2>
-<p>Studio and environmental portraits that feel natural and timeless.</p>
-<p><a class="inline" href="projects.html#portraits">See portraits →</a></p>
-</article>
-<article>
-<h2>Events</h2>
-<p>Documentary coverage of weddings, concerts, and community gatherings.</p>
-<p><a class="inline" href="projects.html#events">See events →</a></p>
-</article>
-<article>
-<h2>Lifestyle</h2>
-<p>Everyday stories — families, couples, and small businesses, on location.</p>
-<p><a class="inline" href="projects.html#lifestyle">See lifestyle →</a></p>
-</article>
-</section>
-</main>
-
-
-<footer class="site-footer">
-<div class="container">
-<p>&copy; <span id="year"></span> Izaiah Bowers &middot; All rights reserved.</p>
-</div>
-</footer>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Izaiah Bowers &middot; All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
