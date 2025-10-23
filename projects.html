@@ -1,84 +1,80 @@
 <!doctype html>
-<button id="lbPrev" class="lb-nav prev" aria-label="Previous">◀</button>
-<button id="lbNext" class="lb-nav next" aria-label="Next">▶</button>
-</div>
-</dialog>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Selected projects by Izaiah Bowers." />
+  <title>Projects — Izaiah Bowers</title>
 
+  <link rel="stylesheet" href="css/style.css?v=3" />
+  <script defer src="js/main.js"></script>
+</head>
+<!-- Disable vertical scrolling on this page so all four images are visible -->
+<body class="projects-page">
+  <a class="skip" href="#main">Skip to content</a>
 
-<!-- Gallery grid: place your images in /images with the names below -->
-<section id="gallery" class="gallery">
-<figure class="card" data-tags="lifestyle portraits">
-<a href="images/i-and-k-301.jpg" data-title="Autumn Collage">
-<img src="images/i-and-k-301.jpg" alt="Couple portrait with autumn collage elements" loading="lazy" decoding="async" />
-</a>
-<figcaption>Autumn Collage</figcaption>
-</figure>
+  <header class="site-header">
+    <div class="container row">
+      <a class="brand" href="index.html">📷 Izaiah Bowers</a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="index.html" data-nav="home">Home</a></li>
+          <li><a href="projects.html" data-nav="projects">Projects</a></li>
+          <li><a href="about.html" data-nav="about">About</a></li>
+          <li><a href="contact.html" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <main id="main">
+    <!-- Minimal header to save vertical space -->
+    <div class="container" style="padding: 0.75rem 0 0.25rem;">
+      <h1 style="margin:0; font-size:clamp(1.25rem,2vw,1.5rem); color:var(--muted); font-weight:600; letter-spacing:.02em;">
+        Projects
+      </h1>
+    </div>
 
-<figure class="card" data-tags="portraits lifestyle">
-<a href="images/jordan-4.jpg" data-title="Campus Scholar">
-<img src="images/jordan-4.jpg" alt="Student in library holding books, VSU sweatshirt" loading="lazy" decoding="async" />
-</a>
-<figcaption>Campus Scholar</figcaption>
-</figure>
+    <!-- One row, four tiles, fills the remaining viewport height -->
+    <section class="projects-quad">
+      <div class="container">
+        <div class="gallery-row" role="list">
+          <!-- 1 -->
+          <figure class="tile" role="listitem">
+            <img src="images/iandk.jpg"
+                 alt="Autumn collage couple portrait on textured orange background" />
+            <figcaption>Autumn Collage</figcaption>
+          </figure>
 
+          <!-- 2 -->
+          <figure class="tile" role="listitem">
+            <img src="images/tdob.jpg"
+                 alt="Editorial studio portrait with mask and layered denim on orange backdrop" />
+            <figcaption>Masquerade</figcaption>
+          </figure>
 
-<figure class="card" data-tags="portraits events">
-<a href="images/keziah-prom-13.jpg" data-title="Prom Elegance">
-<img src="images/keziah-prom-13.jpg" alt="Young woman in blush gown on terrace" loading="lazy" decoding="async" />
-</a>
-<figcaption>Prom Elegance</figcaption>
-</figure>
+          <!-- 3 -->
+          <figure class="tile" role="listitem">
+            <img src="images/tdwb.png"
+                 alt="Conceptual portrait in clouds with flowing white scarf" />
+            <figcaption>Cloud Walker</figcaption>
+          </figure>
 
+          <!-- 4 -->
+          <figure class="tile" role="listitem">
+            <img src="images/y2k.jpg"
+                 alt="Studio portrait with glasses and lollipop on blue backdrop" />
+            <figcaption>Retro Pop</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<figure class="card" data-tags="studio portraits">
-<a href="images/tdob-22.jpg" data-title="Masquerade">
-<img src="images/tdob-22.jpg" alt="Editorial studio portrait with mask and denim coat on orange backdrop" loading="lazy" decoding="async" />
-</a>
-<figcaption>Masquerade</figcaption>
-</figure>
-
-
-<figure class="card" data-tags="studio lifestyle">
-<a href="images/tdwb-10-1.png" data-title="Cloud Walker">
-<img src="images/tdwb-10-1.png" alt="Conceptual portrait with white scarf amid clouds" loading="lazy" decoding="async" />
-</a>
-<figcaption>Cloud Walker</figcaption>
-</figure>
-
-
-<figure class="card" data-tags="studio portraits">
-<a href="images/y2k23-yearbook-12.jpg" data-title="Retro Pop">
-<img src="images/y2k23-yearbook-12.jpg" alt="Studio portrait of woman with glasses and lollipop" loading="lazy" decoding="async" />
-</a>
-<figcaption>Retro Pop</figcaption>
-</figure>
-
-
-<figure class="card" data-tags="studio portraits">
-<a href="images/y2k23-yearbook-54.jpg" data-title="Sisters">
-<img src="images/y2k23-yearbook-54.jpg" alt="Studio portrait of two young women smiling" loading="lazy" decoding="async" />
-</a>
-<figcaption>Sisters</figcaption>
-</figure>
-
-
-<figure class="card" data-tags="landscape">
-<a href="images/auntiej-28.jpg" data-title="River City">
-<img src="images/auntiej-28.jpg" alt="Richmond skyline over the James River at golden hour" loading="lazy" decoding="async" />
-</a>
-<figcaption>River City</figcaption>
-</figure>
-
-
-</section>
-</main>
-
-
-<footer class="site-footer">
-<div class="container">
-<p>&copy; <span id="year"></span> Izaiah Bowers &bull; Images &amp; content by Izaiah.</p>
-</div>
-</footer>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Izaiah Bowers &bull; Images &amp; content by Izaiah.</p>
+    </div>
+  </footer>
 </body>
 </html>
