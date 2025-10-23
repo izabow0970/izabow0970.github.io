@@ -13,6 +13,11 @@
   --ring: rgba(10, 132, 255, 0.35);
 
   --container-max: 1100px;
+
+  /* layout helpers for viewport-fitting sections */
+  --header-h: 72px;
+  --footer-h: 80px;
+  --page-padding: 32px;
 }
 
 /* ---------- Base ---------- */
@@ -39,13 +44,10 @@ h1, h2 { margin: 0 0 .5rem; }
 h1 { font-size: clamp(2rem, 4vw, 3rem); }
 h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 .lede { color: var(--muted); font-size: clamp(1rem, 1.2vw + 1rem, 1.35rem); }
-
 .inline { white-space: nowrap; }
 
 /* ---------- Skip link (accessibility) ---------- */
-.skip {
-  position: absolute; left: -9999px; top: auto;
-}
+.skip { position: absolute; left: -9999px; top: auto; }
 .skip:focus {
   left: 1rem; top: 1rem;
   background: var(--card); color: var(--text);
@@ -66,9 +68,7 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   display: block; color: var(--text);
   padding: .6rem .8rem; border-radius: .6rem;
 }
-.nav a[aria-current="page"], .nav a:hover {
-  background: rgba(255,255,255,.08);
-}
+.nav a[aria-current="page"], .nav a:hover { background: rgba(255,255,255,.08); }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -94,12 +94,12 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   letter-spacing: -.02em;
 }
 
-/* Matches your <section class="hero has-image"> with inner <figure class="bg"><img> */
+/* Matches <section class="hero has-image"> with inner <figure class="bg"><img> */
 .hero.has-image {
   position: relative;
   min-height: min(80vh, 900px);
   display: grid;
-  align-items: end;     /* push copy lower like Apple/SpaceX */
+  align-items: end;           /* push copy lower like Apple/SpaceX */
   padding: 0;
 }
 .hero.has-image .bg {
@@ -112,8 +112,7 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 /* Subtle gradient for legibility over any image */
 .hero.has-image::after {
-  content: "";
-  position: absolute; inset: 0; z-index: 0;
+  content: ""; position: absolute; inset: 0; z-index: 0;
   background: linear-gradient(
     to bottom,
     rgba(0,0,0,.35),
@@ -125,22 +124,9 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   position: relative; z-index: 1;
   padding: clamp(2rem, 4vw, 4rem) 0 clamp(3rem, 6vw, 6rem);
 }
-
-/* Optional centered variant: add 'hero-center' to .hero-content in HTML */
+/* Optional centered variant (add 'hero-center' to .hero-content in HTML) */
 .hero-content.hero-center { text-align: center; }
 .hero-content.hero-center p { display: flex; gap: .75rem; justify-content: center; }
-
-/* ---------- Home grid ---------- */
-.grid-3 {
-  display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-.home-sections article {
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 1rem;
-  padding: 1rem;
-}
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -180,32 +166,18 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   outline-offset: 2px;
 }
 
-/* ===== Projects: single-row, four-tile gallery ===== */
-:root {
-  /* rough offsets so the row fits without vertical scroll */
-  --header-h: 72px;
-  --footer-h: 80px;
-  --page-padding: 32px; /* small top/bottom padding allowance */
-}
-
-/* keep everything visible without vertical scrolling on this page */
-.projects-page { overflow-y: hidden; }
-
-/* section wrapper */
-.projects-quad { padding: 0 0 1rem; }
-
-/* the row of 4 tiles */
-.gallery-row {
+/* ---------- Projects (2×2 grid) ---------- */
+.projects-2x2 { padding: 0 0 1rem; }
+.projects-2x2 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 
-  /* Fill remaining viewport height after header/footer */
+  /* Attempt to fit the 2×2 on a single screen on typical laptops */
   height: calc(100vh - var(--header-h) - var(--footer-h) - var(--page-padding));
-  min-height: 300px;  /* safety on very short screens */
+  min-height: 420px;
 }
 
-/* tile styling to match the homepage vibe */
 .tile {
   position: relative;
   background: var(--card);
@@ -213,36 +185,34 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   border-radius: 1rem;
   overflow: hidden;
   isolation: isolate;
+  display: grid;
 }
 .tile img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center;
+  filter: saturate(.95) contrast(1.05) brightness(.95);
   transform: scale(1.001);
   transition: transform .6s ease;
-  filter: saturate(.95) contrast(1.05) brightness(.95);
 }
 .tile::after {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.0) 60%);
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 60%);
   z-index: 0;
 }
 .tile figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
-  padding: .6rem .8rem;
-  color: #fff; font-weight: 600;
-  z-index: 1;
+  padding: .6rem .8rem; color: #fff; font-weight: 600; z-index: 1;
 }
 .tile:hover img { transform: scale(1.03); }
 
-/* If the screen is extremely narrow, keep four columns but add tiny gaps */
-@media (max-width: 560px) {
-  .gallery-row { gap: .5rem; }
-  .tile figcaption { font-size: .85rem; }
+/* On very small screens or short viewports, allow normal scrolling */
+@media (max-width: 900px), (max-height: 700px) {
+  .projects-2x2 .grid { height: auto; }
+  .tile img { aspect-ratio: 4 / 3; } /* keeps tiles nicely sized if height grows */
 }
 
 /* ---------- Small screens polish ---------- */
 @media (max-width: 540px) {
   .btn { width: 100%; text-align: center; }
-  .home-sections article p:last-child a { display: inline-block; margin-top: .25rem; }
 }
