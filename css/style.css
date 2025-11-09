@@ -69,8 +69,12 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   display: block; color: var(--text);
   padding: .6rem .8rem; border-radius: .6rem;
   text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease; /* hover transition */
 }
-.nav a[aria-current="page"], .nav a:hover { background: rgba(255,255,255,.08); text-decoration: none; }
+.nav a[aria-current="page"], .nav a:hover {
+  background: rgba(255,255,255,.08);
+  text-decoration: none;
+}
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -142,6 +146,11 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 1rem;
   padding: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* zoom transition */
+}
+.section-card:hover {
+  transform: scale(1.02); /* zoom in on hover */
+  box-shadow: 0 18px 40px rgba(0,0,0,.6);
 }
 
 /* Small screens: stack */
@@ -185,6 +194,59 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 .contact-form textarea:focus {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
+}
+
+/* =========================================================
+   Home Projects Table — inside #projects section
+   ========================================================= */
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: .75rem;
+  background: #020617; /* subtle slate-like background */
+  font-size: 0.95rem;
+}
+
+.projects-table caption {
+  caption-side: top;
+  text-align: left;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* colgroup-based column coloring */
+.projects-table col.col-name,
+.projects-table col.col-image {
+  background-color: rgba(15,23,42,0.55); /* tint first & third columns */
+}
+
+.projects-table th,
+.projects-table td {
+  border: 1px solid rgba(148,163,184,0.35); /* slate border */
+  padding: .6rem .8rem;
+  vertical-align: top;
+}
+
+.projects-table thead th {
+  background: rgba(15,23,42,0.95);
+  color: var(--text);
+  text-align: left;
+}
+
+.projects-table tfoot td {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Placeholder style */
+.img-placeholder {
+  display: inline-block;
+  padding: .4rem .6rem;
+  border-radius: .5rem;
+  border: 1px dashed rgba(148,163,184,0.8);
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
 /* =========================================================
