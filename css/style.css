@@ -69,7 +69,7 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   display: block; color: var(--text);
   padding: .6rem .8rem; border-radius: .6rem;
   text-decoration: none;
-  transition: background-color 0.25s ease, color 0.25s ease; /* hover transition */
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 .nav a[aria-current="page"], .nav a:hover {
   background: rgba(255,255,255,.08);
@@ -146,10 +146,10 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 1rem;
   padding: 1rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease; /* zoom transition */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .section-card:hover {
-  transform: scale(1.02); /* zoom in on hover */
+  transform: scale(1.02);
   box-shadow: 0 18px 40px rgba(0,0,0,.6);
 }
 
@@ -203,7 +203,7 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   width: 100%;
   border-collapse: collapse;
   margin-top: .75rem;
-  background: #020617; /* subtle slate-like background */
+  background: #020617;
   font-size: 0.95rem;
 }
 
@@ -218,12 +218,12 @@ h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 /* colgroup-based column coloring */
 .projects-table col.col-name,
 .projects-table col.col-image {
-  background-color: rgba(15,23,42,0.55); /* tint first & third columns */
+  background-color: rgba(15,23,42,0.55);
 }
 
 .projects-table th,
 .projects-table td {
-  border: 1px solid rgba(148,163,184,0.35); /* slate border */
+  border: 1px solid rgba(148,163,184,0.35);
   padding: .6rem .8rem;
   vertical-align: top;
 }
