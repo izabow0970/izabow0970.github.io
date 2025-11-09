@@ -9,7 +9,7 @@
   <title>Izaiah Bowers — Photography</title>
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="css/style.css?v=10" />
+  <link rel="stylesheet" href="css/style.css?v=11" />
 
   <!-- Helper JS (nav highlight + footer year) -->
   <script defer src="js/main.js"></script>
@@ -45,7 +45,7 @@
 
       <!-- Overlay content -->
       <div class="container hero-content">
-        <h1>Welcome to my photography portfolio.</h1>
+        <h1>portrait photography.</h1>
         <p class="lede">Portraits crafted with the pulse of the city.</p>
         <p>
           <a class="btn" href="projects.html">View Projects</a>
@@ -58,21 +58,66 @@
     <section class="home-intro">
       <div class="container">
         <div class="triptych" role="list">
+          <!-- About section -->
           <section id="about" class="section-card" role="listitem" aria-labelledby="about-h">
             <h2 id="about-h">About</h2>
-            <p>I’m Izaiah, a portrait and lifestyle photographer based in Virginia. I focus on retro compositions and studio light to create work that feels retro and vintage.</p>
+            <p>I’m Izaiah, a portrait and lifestyle photographer based in Virginia. I focus on clean composition and natural light to create work that feels honest and timeless.</p>
             <p><a class="inline" href="about.html">Learn more →</a></p>
           </section>
 
+          <!-- Projects section with table -->
           <section id="projects" class="section-card" role="listitem" aria-labelledby="projects-h">
             <h2 id="projects-h">Projects</h2>
-            <p>Explore selected work across portraits, events, and lifestyle sessions. See the full gallery and view each photo in full, no cropping.</p>
-            <p><a class="inline" href="projects.html">View projects →</a></p>
+            <p>Explore two sample projects below. Each listing includes a short description and an image placeholder.</p>
+
+            <table class="projects-table">
+              <caption>Sample Projects Overview</caption>
+
+              <colgroup>
+                <col class="col-name" />
+                <col />
+                <col class="col-image" />
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th scope="col">Project</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Preview</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <th scope="row">Autumn Collage</th>
+                  <td>Layered portrait series blending analog textures with warm autumn tones for a collage-style look.</td>
+                  <td>
+                    <span class="img-placeholder">Image placeholder</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Cloud Walker</th>
+                  <td>Conceptual portrait set in a cloud-like environment, focused on soft light and flowing motion.</td>
+                  <td>
+                    <span class="img-placeholder">Image placeholder</span>
+                  </td>
+                </tr>
+              </tbody>
+
+              <tfoot>
+                <tr>
+                  <td colspan="3">2 sample projects are shown here. More projects are available on the Projects page.</td>
+                </tr>
+              </tfoot>
+            </table>
+
+            <p style="margin-top:.75rem;"><a class="inline" href="projects.html">View full gallery →</a></p>
           </section>
 
+          <!-- Contact section -->
           <section id="contact" class="section-card" role="listitem" aria-labelledby="contact-h">
             <h2 id="contact-h">Contact</h2>
-            <p>Have a shoot in mind or a question? Reach out to book a session or start a collaboration, studio or on location.</p>
+            <p>Have a shoot in mind or a question? Reach out to book a session or start a collaboration—studio or on location.</p>
             <p><a class="inline" href="contact.html">Get in touch →</a></p>
           </section>
         </div>
